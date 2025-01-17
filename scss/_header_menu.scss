@@ -1,0 +1,455 @@
+@import 'variables';
+
+
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 39px 0 0;
+    z-index: 100;
+    transition: all 0.2s ease;
+
+    @media (max-width: 1250px) {
+        justify-content: space-between;
+        background-color: $box-title;
+    }
+
+    @media (max-width: 900px) {
+        padding: 0 20px 0 0;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 15px 0 0;
+    }
+}
+
+.scrolled {
+    background-color: $header-box;
+
+    & .header__menu {
+        background-color: $header-box;
+
+        @media (max-width: 1250px) {
+            top: 85px;
+        }
+
+        @media (max-width: 900px) {
+            top: 75px;
+        }
+
+        @media (max-width: 500px) {
+            top: 70px;
+        }
+    }
+}
+
+.scrolled-700 {
+    -webkit-box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+
+    @media (max-width: 1250px) {
+        & .header__menu {
+            top: 70px;
+            -webkit-box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 13px 14px 0px rgba(0,0,0,0.75);
+        }
+    }
+    
+    & .logo__block {
+        height: 75px;
+    }
+    
+    & .logo__block {
+        height: 70px;
+    }
+}
+
+.header__left,
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.header__left {
+    @media (max-width: 1650px) {
+        gap: 40px;
+    }
+
+    @media (max-width: 900px) {
+        gap: 20px;
+    }
+
+    @media (max-width: 500px) {
+        gap: 10px;
+    }
+}
+
+.header__right {
+    @media (max-width: 1650px) {
+        gap: 15px;
+    }
+
+    @media (max-width: 650px) {
+        gap: 10px;
+    }
+}
+
+.contacts {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 650px) {
+        display: block;
+        color: $color-white;
+        font-size: 16px;
+        padding: 0 0 0 38px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 256 256'%3E%3Cpath fill='%23e84424' stroke-miterlimit='10' d='M13.5 6A7.5 7.5 0 0 0 6 13.5v21c0 4.1 3.4 7.5 7.5 7.5h6.4a1.5 1.5 0 1 0 0-3h-6.4C11 39 9 37 9 34.5v-21C9 11 11 9 13.5 9h12.8a1.5 1.5 0 1 0 0-3zm18.6 0a1.5 1.5 0 1 0 0 3h2.4C37 9 39 11 39 13.5v21c0 2.5-2 4.5-4.5 4.5h-8.7a1.5 1.5 0 1 0 0 3h8.7c4.1 0 7.5-3.4 7.5-7.5v-21C42 9.4 38.6 6 34.5 6zM18 14c-2.9-.2-4 2-4 2.7 0 .4-.7 5.8 5.4 11.9 6 6 11.5 5.5 12 5.5.6 0 2.8-1.2 2.7-4 0-.6-.3-1-.8-1.3l-2.2-1.5a3 3 0 0 0-3.1 0l-.9.3c-.4.3-1 .4-1.5.2a10 10 0 0 1-5.4-5.4c-.2-.5-.1-1 .2-1.5l.4-.9a3 3 0 0 0-.1-3l-1.5-2.3c-.3-.5-.7-.8-1.2-.8z' font-family='none' font-size='none' font-weight='none' style='mix-blend-mode:normal' text-anchor='none' transform='scale(5.33333)'/%3E%3C/svg%3E");
+            top: -7px;
+            left: 0px;
+            border-radius: 5px;
+        } 
+    }
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.burger {
+    display: none; 
+    position: relative;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    @media (max-width: 1250px) {
+        display: block;
+
+        &::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: $secondary-color;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            transition: all 0.3s ease;
+
+            @media (max-width: 650px) {
+                width: 28px;
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: $secondary-color;
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            transition: all 0.3s ease;
+
+            @media (max-width: 650px) {
+                width: 28px;
+            }
+        }
+
+        & span {
+            width: 30px;
+            height: 3px;
+            background-color: $color-white;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            transition: all 0.3s ease;
+
+            @media (max-width: 650px) {
+                width: 28px;
+            }
+        }
+
+        .header__menu_active & {
+            & span {
+                transform: scale(0);
+            }
+
+            &::before {
+                transform: rotate(45deg);
+                top: 10px;
+
+                @media (max-width: 650px) {
+                    top: 9px;
+                }
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+                bottom: 9px;
+
+                @media (max-width: 650px) {
+                    bottom: 8px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        width: 28px;
+        height: 20px;
+    }
+}
+
+
+.header__wrap {
+    background: url('../img/header_bg.jpg') no-repeat;
+    width: 100%;
+    background-size: cover;
+
+    @media (max-width: 1250px) {
+        background: url('../img/header_bg_1250.jpg') no-repeat;
+        background-position: left;
+    }
+}
+
+.logo__block {
+    min-width: 310px;
+    height: 100px;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1500px) {
+        min-width: 230px;
+    }
+
+    @media (max-width: 1250px) {
+        height: 85px;
+    }
+
+    @media (max-width: 900px) {
+        min-width: 190px;
+        height: 75px;
+    }
+
+    @media (max-width: 500px) {
+        min-width: 130px;
+        height: 70px;
+    }
+} 
+
+.logo {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='153' height='62' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%230A3358' d='M120.185 26.775v9.032H91.897V0h28.288v9.032h-19.261v17.743h19.261Z'/%3E%3Cpath fill='%23E84424' d='M76.955 35.807 86.207 0H75.22l-9.252 35.807h10.988ZM59.442 35.807 68.694 0H57.706l-9.252 35.807h10.988ZM41.928 35.807 51.18 0H40.192L30.94 35.807h10.988Z'/%3E%3Cpath fill='%230A3358' d='M4.796 59.066a1.055 1.055 0 0 1-1.199-1.194V54.84h-.003v-3.032a1.059 1.059 0 0 1 1.2-1.194h6.391v-2.798h-7.19c-1.1-.1-2.194.238-3.047.94A4.11 4.11 0 0 0 0 51.773v3.067h.002v3.066a4.11 4.11 0 0 0 .949 3.018 4.196 4.196 0 0 0 3.045.94h7.191v-2.798H4.796ZM23.933 51.316a1.12 1.12 0 0 1 .297-.336.616.616 0 0 1 .398-.142h.978v-2.994l-.172-.027a10.67 10.67 0 0 1-.543-.097 9.497 9.497 0 0 0-.574-.069 6.994 6.994 0 0 0-.659-.03 2.745 2.745 0 0 0-1.785.56c-.46.383-.838.857-1.109 1.392l-1.883 3.58h-1.423v-5.338h-3.895v13.99h3.895v-5.531h1.425l3.006 5.532h4.146l-3.894-7.095 1.792-3.395ZM36.602 47.62h-4.85a4.256 4.256 0 0 0-3.101.982 4.26 4.26 0 0 0-.98 3.102v6.212a4.256 4.256 0 0 0 .98 3.103 4.25 4.25 0 0 0 3.1.981h4.85a4.254 4.254 0 0 0 3.1-.981 4.262 4.262 0 0 0 .98-3.103v-6.212a4.265 4.265 0 0 0-.98-3.102 4.259 4.259 0 0 0-3.1-.981Zm.186 4.084v6.212c0 .666-.297.963-.962.963h-3.299c-.665 0-.962-.297-.962-.963v-6.212c0-.665.297-.963.962-.963h3.298c.666 0 .963.298.963.963ZM51.55 47.815H43.2v13.99h3.895v-3.881h4.454a3.524 3.524 0 0 0 3.97-2.413 3.53 3.53 0 0 0 .111-1.671v-1.942a4.265 4.265 0 0 0-.98-3.102 4.26 4.26 0 0 0-3.1-.98Zm-4.455 3.12h3.68c.664 0 .961.298.961.963v1.942c0 .666-.297.963-.962.963h-3.679v-3.868ZM58.017 61.806h3.895v-10.87h4.447v10.87h3.895V47.815H58.017v13.99ZM76.886 55.59v-7.774h-3.894v13.99h4.005l4.336-7.774v7.774h3.895v-13.99h-4.006l-4.336 7.773ZM96.68 47.62h-4.849a4.257 4.257 0 0 0-3.1.982 4.262 4.262 0 0 0-.98 3.102v6.212a3.53 3.53 0 0 0 2.41 3.973c.54.17 1.113.208 1.67.111h4.85a3.525 3.525 0 0 0 3.969-2.413c.171-.54.209-1.113.112-1.67v-6.213a4.26 4.26 0 0 0-.98-3.102 4.256 4.256 0 0 0-3.101-.981Zm.187 4.084v6.212c0 .666-.296.963-.962.963h-3.298c-.666 0-.963-.297-.963-.963v-6.212c0-.665.297-.963.963-.963h3.298c.666 0 .962.298.962.963ZM111.622 53.153h-4.446v-5.337h-3.895v13.99h3.895v-5.533h4.446v5.532h3.895v-13.99h-3.895v5.338ZM134.296 47.815h-8.349v13.99h3.895v-3.881h4.454a3.525 3.525 0 0 0 3.97-2.413c.171-.54.209-1.113.112-1.671v-1.942a4.27 4.27 0 0 0-.981-3.102 4.26 4.26 0 0 0-3.101-.98Zm-4.454 3.12h3.678c.666 0 .963.298.963.963v1.942c0 .666-.297.963-.963.963h-3.678v-3.868ZM140.765 47.815v13.99h3.894v-10.87h4.446v10.87H153v-13.99h-12.235ZM122.283 53.253h-3.117v3.118h3.117v-3.118ZM2.499 16.595c.284-.005.565.049.828.158.236.1.447.253.616.447.173.205.303.442.382.698.091.297.136.606.132.916.004.31-.04.617-.132.913-.08.255-.21.492-.382.696a1.663 1.663 0 0 1-.616.446c-.263.108-.545.16-.828.156a2.091 2.091 0 0 1-.828-.156 1.68 1.68 0 0 1-.619-.446 1.961 1.961 0 0 1-.384-.696 3.215 3.215 0 0 1 0-1.829c.08-.256.21-.494.384-.698.17-.194.381-.347.619-.447.262-.11.544-.163.828-.158Zm0 4.105a1.6 1.6 0 0 0 .672-.132c.188-.085.353-.216.48-.379a1.68 1.68 0 0 0 .287-.594 3.249 3.249 0 0 0 0-1.56 1.705 1.705 0 0 0-.287-.599 1.299 1.299 0 0 0-.48-.383 1.57 1.57 0 0 0-.672-.134 1.57 1.57 0 0 0-.673.134 1.294 1.294 0 0 0-.48.383c-.135.18-.233.383-.29.6a3.164 3.164 0 0 0 0 1.559c.057.215.155.417.29.594.127.164.292.294.48.38a1.6 1.6 0 0 0 .673.131ZM11.117 17.24l-.041.036-.054.015-.117-.058a1.375 1.375 0 0 0-.198-.127 1.692 1.692 0 0 0-.314-.129 1.754 1.754 0 0 0-1.115.074c-.19.086-.356.216-.486.378-.14.177-.242.38-.3.598a3.106 3.106 0 0 0 .003 1.592c.061.214.163.414.3.59.127.157.289.283.472.366.193.085.403.128.614.126a1.585 1.585 0 0 0 .866-.234c.077-.047.148-.1.215-.16l.13-.074.086.044.108.138a1.25 1.25 0 0 1-.251.242c-.106.078-.22.143-.341.195a2.14 2.14 0 0 1-.413.127 2.34 2.34 0 0 1-.465.046 1.843 1.843 0 0 1-.75-.15 1.636 1.636 0 0 1-.584-.432c-.171-.204-.3-.44-.38-.695a3.223 3.223 0 0 1-.006-1.833c.078-.257.207-.496.38-.701a1.72 1.72 0 0 1 .611-.457 2 2 0 0 1 .828-.162c.255-.005.507.04.744.133.21.086.402.21.566.364l-.108.147ZM18.237 16.664v4.304h-.416V18.81h-2.554v2.159h-.415v-4.305h.415v1.83h2.554v-1.83h.416ZM21.087 20.635l.03-.155.084-.128.126-.086.158-.033.155.033.128.086.087.128.032.155-.032.159-.087.125-.128.084-.155.03a.391.391 0 0 1-.398-.398ZM133.753 20.644v.32h-3.157v-.32h1.405v-4.966c0-.098.005-.202.013-.311l-1.349 1.197-.121.04-.095-.053-.125-.173 1.768-1.562h.324v5.828h1.337ZM138.861 18.438c.087-.123.167-.24.243-.349a5.25 5.25 0 0 0 .203-.317 1.706 1.706 0 0 1-.61.434 1.915 1.915 0 0 1-.765.153 1.894 1.894 0 0 1-.694-.123 1.56 1.56 0 0 1-.915-.904 1.906 1.906 0 0 1-.129-.72 1.78 1.78 0 0 1 .553-1.31c.178-.168.388-.3.617-.388.249-.096.513-.143.78-.14.255-.003.508.044.745.138.22.088.419.221.584.392.166.174.296.38.381.605.093.252.139.518.135.786a2.038 2.038 0 0 1-.196.886c-.069.153-.148.3-.236.443-.092.152-.197.314-.315.488l-1.604 2.353a.23.23 0 0 1-.212.1h-.376l1.811-2.527Zm-.817-.398c.225.004.449-.039.657-.126a1.466 1.466 0 0 0 .788-.785c.067-.162.102-.337.103-.513a1.632 1.632 0 0 0-.109-.61 1.377 1.377 0 0 0-.302-.474 1.406 1.406 0 0 0-.461-.307 1.507 1.507 0 0 0-.58-.11 1.732 1.732 0 0 0-.624.108c-.179.067-.343.17-.481.303-.136.132-.243.29-.314.465-.076.189-.115.391-.112.595-.003.207.031.413.101.608a1.24 1.24 0 0 0 .744.746c.189.069.389.103.59.1ZM145.5 18.438c.087-.123.167-.24.242-.349.075-.107.143-.213.203-.317a1.697 1.697 0 0 1-.61.434 1.907 1.907 0 0 1-.764.153 1.89 1.89 0 0 1-.694-.123 1.574 1.574 0 0 1-.915-.904 1.887 1.887 0 0 1-.129-.72 1.779 1.779 0 0 1 .552-1.31c.179-.168.388-.3.617-.388a2.12 2.12 0 0 1 .781-.14c.255-.003.508.044.745.138.22.088.419.221.583.392.167.174.296.38.382.605.093.252.139.518.135.786a2.038 2.038 0 0 1-.196.886c-.069.153-.148.3-.236.443a11.53 11.53 0 0 1-.316.488l-1.604 2.353a.23.23 0 0 1-.211.1h-.376l1.811-2.527Zm-.818-.398c.226.004.45-.039.658-.126a1.446 1.446 0 0 0 .787-.785c.068-.162.103-.337.104-.513a1.632 1.632 0 0 0-.109-.61 1.377 1.377 0 0 0-.302-.474 1.417 1.417 0 0 0-.461-.307 1.512 1.512 0 0 0-.581-.11 1.722 1.722 0 0 0-.623.108c-.179.067-.343.17-.481.303-.136.132-.243.29-.314.465-.077.189-.115.391-.113.595-.002.207.032.413.101.608.064.172.163.329.291.46.129.127.284.224.454.286.189.069.388.103.589.1ZM150.021 17.265a4.4 4.4 0 0 1 1.037-.138c.288-.006.573.04.844.137a1.588 1.588 0 0 1 .976.962 2.32 2.32 0 0 1-.044 1.603 1.93 1.93 0 0 1-1.13 1.062c-.263.096-.54.144-.819.143a2.706 2.706 0 0 1-.914-.166 2.44 2.44 0 0 1-.371-.176 2.42 2.42 0 0 1-.301-.204l.126-.168.12-.065.163.066c.088.051.179.098.272.141.128.058.26.106.396.143.173.046.352.068.531.065.226.002.45-.037.662-.115.198-.072.379-.185.532-.33a1.51 1.51 0 0 0 .352-.534c.088-.23.131-.475.128-.721a1.83 1.83 0 0 0-.097-.605 1.254 1.254 0 0 0-.294-.474 1.356 1.356 0 0 0-.498-.307 2.035 2.035 0 0 0-.706-.11c-.176 0-.351.012-.524.038-.198.029-.395.07-.587.125l-.265-.081.477-2.713h2.754v.177l-.059.145a.255.255 0 0 1-.185.059h-2.213l-.363 2.041Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h153v62H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    display: block;
+    width: 153px;
+    height: 62px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    @media (max-width: 500px) {
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        width: 129px;
+        height: 54px;
+    }
+}
+
+.numbers {
+    display: flex;
+    gap: 65px;
+    font-size: 18px;
+    line-height: 21px;
+    color: $color-white;
+
+    & p:first-child {
+        position: relative;
+        margin-top: 20px;
+
+        &::before {
+            content: 'Kyivstar:';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            display: block;
+            font-size: 11px;
+        }
+
+        @media (max-width: 900px) {
+            &::before {
+                top: -17px;
+            }
+        }
+    }
+
+    & p:last-child {
+        position: relative;
+        margin-top: 20px;
+
+        &::before {
+            content: 'Vadafone:';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            display: block;
+            font-size: 11px;
+        }
+
+        @media (max-width: 900px) {
+            &::before {
+                top: -17px;
+            }
+        }
+    }
+
+    @media (max-width: 1500px) {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 900px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+        display: none;
+    }
+}
+
+.header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    transition: all 0.2s ease;
+
+    li {
+        @media (max-width: 900px) {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1500px) {
+        gap: 20px;
+    }
+
+    @media (max-width: 1250px) {
+        position: absolute;
+        flex-direction: column;
+        background: $box-title;
+        right: 0;
+        top: 85px;
+        z-index: 10;
+        width: calc(100% - 230px);
+        padding: 15px 0;
+        gap: 5px;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        opacity: 0;
+
+        .header__menu_active &{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @media (max-width: 900px) {
+        top: 75px;
+        width: 100%;
+    }
+
+    @media (max-width: 500px) {
+        top: 70px;
+    }
+}
+
+.menu_link {
+    padding-bottom: 5px;
+    color: $color-white;
+    border-bottom: 2px solid $secondary-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-bottom: none;
+        color: $secondary-color;
+        text-shadow: $text-shadow;
+    }
+
+    @media (max-width: 1250px) {
+        border-bottom: none;
+        font-size: 16px;
+    }
+
+    @media (max-width: 900px) {
+        text-align: start;
+        padding: 0 20px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 12px;
+    }
+}
+
+.language {
+    width: 43px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    color: $color-white;
+    border: none;
+    position: relative;
+    outline: none;
+    padding-bottom: 2px;
+
+    &::after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23F0F3F5' d='m4.747 6.828 4.151-4.163a.349.349 0 0 0-.494-.493L4.5 6.087.596 2.172a.349.349 0 1 0-.494.493l4.151 4.163a.348.348 0 0 0 .494 0Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M9 0v9H0V0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+        width: 9px;
+        height: 9px;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+
+    & option {
+        background: $primary-color;
+    }
+
+    .language_active & {
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+  

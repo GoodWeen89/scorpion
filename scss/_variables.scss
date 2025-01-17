@@ -1,0 +1,35 @@
+$primary-color: #0A3358;
+$secondary-color: #E84424;
+$secondary-color-transparent: rgba(232, 68, 36, 0.8);
+$secondary-color-hover: rgba(192, 19, 0, 0.8);
+$color-white: #fff;
+$text-line: rgba(255, 255, 255, 0.6);
+$title-color: #071637;
+$text-color: #000;
+$box-title: rgba(10, 51, 88, 0.52);
+$bg-box-gray: rgba(237, 239, 245, 0.49);
+$header-box: rgba(10, 51, 88, 1);
+$text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+$icon-bg:  rgba(241, 243, 246, 0.8);
+$stats-block-ligth: rgba(10, 51, 88, 0.69);
+$stats-block-dark: rgba(10, 51, 88, 0.93);
+$grid-bg-hover: rgba(10, 51, 88, 0.96);
+$item-team-name: linear-gradient(0deg, rgba(6, 32, 54, 0.8) 1.6%, rgba(45, 48, 51, 0) 100%);
+
+  
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),
+            url('../fonts/Gilroy-ExtraBold_1.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.woff2') format('woff2'),
+            url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
