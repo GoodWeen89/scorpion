@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function scrollFunction() {
     const header = document.querySelector('header');
     const mapContainer = document.querySelector('.container__map');
-    const numberAnimation = document.querySelector('.stats__numbers_wrap');
 
 
     window.addEventListener('scroll', () => {
@@ -59,15 +58,15 @@ function popUpContacts(pageBody) {
 
 function numberAnimation() {
     const counters = document.querySelectorAll('.counter');
-    const animationStartScroll = 3000; // Позиция, где начинается анимация
-    let hasAnimated = false; // Проверка, запускалась ли анимация
+    const animationStartScroll = 3000; 
+    let hasAnimated = false; 
 
     const animateCount = counter => {
         const target = parseInt(counter.getAttribute('data-target'), 10);
         const suffix = counter.getAttribute('data-suffix') || "";
         let current = 0;
-        const duration = 2000; // Время анимации в миллисекундах
-        const steps = 60; // Количество кадров
+        const duration = 2000; 
+        const steps = 60; 
         const increment = Math.ceil(target / (duration / (1000 / steps)));
 
         const updateCounter = () => {
@@ -86,12 +85,12 @@ function numberAnimation() {
     const onScroll = () => {
         if (!hasAnimated && window.scrollY >= animationStartScroll) {
             counters.forEach(counter => {
-                counter.classList.add('visible'); // Плавное появление
-                animateCount(counter); // Запуск анимации
+                counter.classList.add('visible');
+                animateCount(counter);
             });
-            hasAnimated = true; // Анимация запущена
+            hasAnimated = true;
         }
     };
 
-    window.addEventListener('scroll', onScroll); // Отслеживаем прокрутку
+    window.addEventListener('scroll', onScroll);
 }
