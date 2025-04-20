@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popUpContacts(pageBody);
     scrollFunction();
     numberAnimation();
+    preloader();
 });
 
 function scrollFunction() {
@@ -93,4 +94,13 @@ function numberAnimation() {
     };
 
     window.addEventListener('scroll', onScroll);
+}
+
+
+function preloader() {
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+    
+        preloader.style.display = 'none';
+    });
 }
